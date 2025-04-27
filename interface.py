@@ -13,7 +13,21 @@ def escolher_imagem():
 def iniciar_interface():
     root = tk.Tk()
     root.title("Imagem para Música 🎼")
-    root.geometry("300x150")
+    
+    # Definindo o tamanho da janela
+    largura_janela = 300
+    altura_janela = 150
+
+    # Pegando o tamanho da tela
+    largura_tela = root.winfo_screenwidth()
+    altura_tela = root.winfo_screenheight()
+
+    # Calculando as coordenadas para centralizar
+    pos_x = (largura_tela // 2) - (largura_janela // 2)
+    pos_y = (altura_tela // 2) - (altura_janela // 2)
+
+    # Aplicando o tamanho e posição
+    root.geometry(f"{largura_janela}x{altura_janela}+{pos_x}+{pos_y}")
 
     label = tk.Label(root, text="Escolha uma imagem para gerar música 🎵", wraplength=250)
     label.pack(pady=20)
